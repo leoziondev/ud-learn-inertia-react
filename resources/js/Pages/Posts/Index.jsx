@@ -19,10 +19,11 @@ export default function Posts({ auth, posts }) {
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden ">
                         <div className='space-y-4'>
-                            {posts.map((post) => {
+                            {posts.data.map((post) => {
                                 return (
                                     <div className="p-6 text-gray-900 bg-white shadow-sm sm:rounded-lg" key={post.id}>
-                                        {post.body}
+                                        <p>{post.body}</p>
+                                        <small>Author: {post.user.name}</small>
                                     </div>
                                 )
                             })}
